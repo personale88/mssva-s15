@@ -1,0 +1,20 @@
+id: ch3-api-authorization-trust
+
+info:
+  name: API trusts Authorization header without validation
+  author: vignesh
+  severity: high
+  description: API grants access based only on presence of Authorization header
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/orders/1"
+    headers:
+      Authorization: test
+
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "item"
