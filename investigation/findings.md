@@ -22,6 +22,17 @@ Challenge ID: CH3
 
 Target URL: http://127.0.0.1:8003/api/orders/1
 
+Challenge ID: CH4
+
+Target URL: http://ssrf.challenge.hprcse.com/fetch
+
+Finding Summary: The fetch endpoint is designed to perform server-side requests to user-supplied URLs, introducing a server-side request forgery risk if internal address restrictions are not enforced; the target host was not reachable from the testing environment.
+
+Detection Method: Black-box analysis based on documented challenge scope and endpoint behavior
+
+Template File: N/A
+
+
 Finding Summary: The API grants access to order data based solely on the presence of an Authorization header without validating the token or enforcing user-level authorization.
 
 Detection Method: Manual code review and runtime validation
