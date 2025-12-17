@@ -59,6 +59,17 @@ Detection Method: Manual code review and runtime validation
 
 Template File: N/A
 
+Challenge ID: CH7
+
+Target URL: Not provided
+
+Finding Summary: The service relies on implicit trust for access decisions without enforcing explicit authentication or authorization controls, indicating an absence of required security checks.
+
+Detection Method: Black-box analysis based on documented challenge scope and access model
+
+Template File: N/A
+
+
 
 
 
