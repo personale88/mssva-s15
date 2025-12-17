@@ -49,5 +49,16 @@ Detection Method: Black-box analysis based on documented challenge scope
 
 Template File: N/A
 
+Challenge ID: CH6
+
+Target URL: http://127.0.0.1:8006/commit
+
+Finding Summary: The application returns a successful commit response even when required workflow state transitions are skipped, resulting in a silent failure and state desynchronization.
+
+Detection Method: Manual code review and runtime validation
+
+Template File: N/A
+
+
 
 
