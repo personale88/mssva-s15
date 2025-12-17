@@ -1,0 +1,17 @@
+id: ch7-absence-of-control
+
+info:
+  name: Absence of access control enforcement
+  author: vignesh
+  severity: high
+  description: Service relies on implicit trust without enforcing access controls
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+
+    matchers:
+      - type: status
+        status:
+          - 200
