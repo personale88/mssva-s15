@@ -1,0 +1,18 @@
+id: ch6-silent-state-desync
+
+info:
+  name: Silent workflow state desynchronization
+  author: vignesh
+  severity: medium
+  description: Application returns success despite invalid workflow state
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/commit"
+
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "done"
