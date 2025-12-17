@@ -1,0 +1,22 @@
+id: ch1-auth-missing-password
+
+info:
+  name: Authentication bypass via missing password
+  author: vignesh
+  severity: high
+  description: Authentication token is issued when username is provided without password
+
+requests:
+  - method: POST
+    path:
+      - "{{BaseURL}}/login"
+    headers:
+      Content-Type: application/json
+    body: |
+      {"username":"test"}
+
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "token"
