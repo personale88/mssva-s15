@@ -39,4 +39,15 @@ Detection Method: Manual code review and runtime validation
 
 Template File: N/A
 
+Challenge ID: CH5
+
+Target URL: Not provided
+
+Finding Summary: Challenge 5 is defined as a remote black-box session management assessment; however, no target endpoint was provided to evaluate session handling behavior.
+
+Detection Method: Black-box analysis based on documented challenge scope
+
+Template File: N/A
+
+
 
