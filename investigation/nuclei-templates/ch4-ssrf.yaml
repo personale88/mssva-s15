@@ -1,0 +1,17 @@
+id: ch4-ssrf-fetch
+
+info:
+  name: Server-Side Request Forgery via fetch endpoint
+  author: vignesh
+  severity: high
+  description: Fetch endpoint performs server-side requests to user-supplied URLs
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/fetch?url=http://127.0.0.1"
+
+    matchers:
+      - type: status
+        status:
+          - 200
