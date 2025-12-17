@@ -1,0 +1,19 @@
+id: ch5-session-trust
+
+info:
+  name: Session trust without verification
+  author: vignesh
+  severity: medium
+  description: Application may trust session identifiers without proper validation
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+    headers:
+      Cookie: session=admin
+
+    matchers:
+      - type: status
+        status:
+          - 200
