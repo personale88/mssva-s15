@@ -6,17 +6,18 @@ Finding Summary: The authentication endpoint issues an access token when a usern
 
 Detection Method: Manual code review and runtime validation
 
-Template File: N/A
+Template File:ch1-auth.yaml
 
 Challenge ID: CH2
 
-Target URL: http://127.0.0.1:8002/download
+Target URL: http://172.31.138.39:8002/download
 
-Finding Summary: Improper path validation in the download endpoint allows access to files outside the intended base directory due to a flawed string-based containment check.
+Finding Summary: Improper path validation in the download endpoint allows attackers to read files outside the intended base directory, resulting in disclosure of sensitive information such as API keys.
 
-Detection Method: Manual code review and runtime validation
+Detection Method: Manual runtime validation and custom Nuclei template
 
-Template File: N/A
+Template File: ch2-file.yaml
+
 
 Challenge ID: CH3
 
@@ -30,14 +31,14 @@ Finding Summary: The fetch endpoint is designed to perform server-side requests 
 
 Detection Method: Black-box analysis based on documented challenge scope and endpoint behavior
 
-Template File: N/A
+Template File: ch3-api.yaml
 
 
 Finding Summary: The API grants access to order data based solely on the presence of an Authorization header without validating the token or enforcing user-level authorization.
 
 Detection Method: Manual code review and runtime validation
 
-Template File: N/A
+Template File: ch4-ssrf.yaml
 
 Challenge ID: CH5
 
@@ -47,7 +48,7 @@ Finding Summary: Challenge 5 is defined as a remote black-box session management
 
 Detection Method: Black-box analysis based on documented challenge scope
 
-Template File: N/A
+Template File: ch5-session.yaml
 
 Challenge ID: CH6
 
@@ -57,7 +58,7 @@ Finding Summary: The application returns a successful commit response even when 
 
 Detection Method: Manual code review and runtime validation
 
-Template File: N/A
+Template File: ch6-silent.yaml
 
 Challenge ID: CH7
 
@@ -67,7 +68,7 @@ Finding Summary: The service relies on implicit trust for access decisions witho
 
 Detection Method: Black-box analysis based on documented challenge scope and access model
 
-Template File: N/A
+Template File: ch7-absence.yaml
 
 
 
